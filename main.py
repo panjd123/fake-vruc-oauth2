@@ -11,7 +11,6 @@ app = FastAPI(title="Fake VRUC Authentication Server")
 CLIENT_ID = "vruc_test_client"
 CLIENT_SECRET = "vruc_test_secret"
 SECRET_KEY = secrets.token_urlsafe(32)
-REDIRECT_URI = "http://localhost:3000/auth/callback/vruc"
 AUTH_HOST = "http://localhost:8000"
 
 # Simulated database for codes and tokens
