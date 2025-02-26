@@ -14,7 +14,7 @@ def test_oauth_flow():
     # Step 1: Request authorization code
     print("Step 1: Requesting authorization code...")
     auth_url = (
-        f"{BASE_URL}/authorize?"
+        f"{BASE_URL}/oauth2/authorize?"
         f"client_id={CLIENT_ID}&"
         f"response_type=code&"
         f"scope={SCOPE}&"
@@ -38,7 +38,7 @@ def test_oauth_flow():
 
     # Step 2: Exchange code for access token
     print("Step 2: Exchanging code for access token...")
-    token_url = f"{BASE_URL}/token"
+    token_url = f"{BASE_URL}/oauth2/token"
     token_data = {
         "client_id": CLIENT_ID,
         "client_secret": CLIENT_SECRET,

@@ -50,7 +50,7 @@ class TokenResponse(BaseModel):
     token_type: str = "Bearer"
     scope: str
 
-@app.get("/authorize")
+@app.get("/oauth2/authorize")
 async def authorize(
     client_id: str,
     response_type: str,
@@ -83,7 +83,7 @@ async def authorize(
     redirect_url = f"{redirect_uri}?code={code}&state={state or ''}"
     return RedirectResponse(redirect_url)
 
-@app.post("/token", response_model=TokenResponse)
+@app.post("/oauth2/token", response_model=TokenResponse)
 async def token(
     client_id: str = Form(...),
     client_secret: str = Form(...),
